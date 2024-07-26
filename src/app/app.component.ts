@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'lmsProject';
+
+  loginState:boolean=false;
+  registerState:boolean=false;
+
+  login(){
+    this.loginState=true;
+    alert("lpgin called");
+  }
+  register(){
+    this.registerState=true;
+    alert("register called");
+  }
 }
