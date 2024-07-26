@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-login-student',
+  templateUrl: './login-student.component.html',
+  styleUrls: ['./login-student.component.css']
 })
-export class LoginComponent {
+export class LoginStudentComponent {
+
+  
+  login(){
+    alert("login studnet")
+  }
 
   studentId: number | undefined; // property to store the student ID entered by user
   successMessage: string = '';
@@ -44,4 +49,5 @@ export class LoginComponent {
       }
     );
   }
+
 }

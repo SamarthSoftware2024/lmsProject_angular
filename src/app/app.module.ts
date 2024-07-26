@@ -3,16 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './Model/register/register.component';
-import { LoginComponent } from './Model/login/login.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { UserComponent } from './user/user.component';
+import { LoginStudentComponent } from './user/Component/login-student/login-student.component';
+import { RegisterStudentComponent } from './user/Component/register-student/register-student.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
-    LoginComponent
+    UserComponent,
+    LoginStudentComponent,
+    RegisterStudentComponent
   ],
   imports: [
     BrowserModule,
