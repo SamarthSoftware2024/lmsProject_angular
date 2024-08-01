@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { UserComponent } from '../../user.component';
 
 @Component({
   selector: 'app-login-student',
@@ -8,12 +11,8 @@ import { Component } from '@angular/core';
 })
 export class LoginStudentComponent {
 
-  
-  login(){
-    alert("login studnet")
-  }
-
-  studentId: number | undefined; // property to store the student ID entered by user
+  studentId: number | undefined;
+  user: UserComponent = new UserComponent();
   successMessage: string = '';
   errorMessage: string = '';
   dataInDB: any;
@@ -21,33 +20,30 @@ export class LoginStudentComponent {
   constructor(private http: HttpClient) {}
 
   loginStudent() {
-    // Ensure studentId is defined and not empty
-    if (!this.studentId) {
-      this.errorMessage = 'Please enter a Student ID';
+    if (this.studentId === undefined || !this.user.userName || !this.user.password) {
+      this.errorMessage = 'Please fill all fields';
       this.successMessage = '';
       return;
     }
 
-    // Make the HTTP POST request to fetch student data
-    this.http.post('http://localhost:8080/login/' + this.studentId, {}).subscribe(
-      (data: any) => {
-        if (data === false) {
+    this.http.post('http://localhost:8080/login/' + this.studentId, this.user, { responseType: 'text' })
+      .subscribe(
+        (data: string) => {
           console.log(data);
-          this.errorMessage = 'failed to login';
+          
+          if (data === 'failed') { 
+            this.errorMessage = 'Failed to login';
+            this.successMessage = '';
+          } else {
+            this.errorMessage = '';
+            this.dataInDB = data;
+          }
+        },
+        (error) => {
+          console.error('Error:', error);
+          this.errorMessage = 'Login failed';
           this.successMessage = '';
-        } else {
-          console.log(data);
-          this.successMessage = 'login successfully';
-          this.errorMessage = '';
-          this.dataInDB = data;
         }
-      },
-      (error) => {
-        console.error('Error:', error);
-        this.errorMessage = 'login failed';
-        this.successMessage = '';
-      }
-    );
+      );
   }
-
 }

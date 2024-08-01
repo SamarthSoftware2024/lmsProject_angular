@@ -1,15 +1,18 @@
 <div>
     <div>
-        <h4>Enter ID : <input type="text" [(ngModel)]="studentId"></h4>
-        <h4>Enter username : <input type="text"> </h4>
-        <h4>Enter Password: <input type="text"> </h4>
-        <button type="button" (click)="loginStudent()">Login Student</button>
+      <h4>Enter ID: <input type="number" [(ngModel)]="studentId"></h4>
+      <h4>Enter username: <input type="text" [(ngModel)]="user.userName"></h4>
+      <h4>Enter Password: <input type="text" [(ngModel)]="user.password"></h4>
+      <button type="button" (click)="loginStudent()">Login Student</button>
     </div>
-    <div *ngIf="successMessage" class="success-message">
-        {{ successMessage }}
+    <div *ngIf="successMessage">
+      <p>{{ successMessage }}</p>
     </div>
-</div>
-<!-- <div *ngIf="errorMessage" class="error-message">
-      {{ errorMessage }}
-    </div> -->
-<!-- </div> -->
+    <div *ngIf="errorMessage">
+      <p>{{ errorMessage }}</p>
+    </div>
+    <div *ngIf="dataInDB">
+        <p>{{ dataInDB }}</p>
+      </div>
+  </div>
+  

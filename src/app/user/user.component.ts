@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
-  "username":String;
+  "userName":String;
   "password":String;
 
 }
