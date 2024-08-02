@@ -1,9 +1,26 @@
 <div>
     <div>
-        <button>Apti</button>
-        <button>MCQ</button>
-        <button>Coding</button>
-        <button>GTO</button>
-        <button>SQL</button>
+        <button (click)="ApptitudeCall()">Apti</button>
+        <button (click)="MCQCall()">MCQ</button>
+        <button (click)="CodingCall()">Coding</button>
+        <button (click)="GTOCall()">GTO</button>
+        <button (click)="SQLCall()">SQL</button>
+    </div>
+    <div>
+        <div *ngIf="aptiVisible">
+            <app-apptitude></app-apptitude>
+        </div>
+        <div *ngIf="MCQVisible">
+            <app-mcq></app-mcq>
+        </div>
+        <div *ngIf="CodingVisible">
+            <app-coding></app-coding>
+        </div>
+        <div *ngIf="GTOVisible">
+            <app-gto></app-gto>
+        </div>
+        <div *ngIf="SQLVisible">
+            <app-sql></app-sql>
+        </div>
     </div>
 </div>

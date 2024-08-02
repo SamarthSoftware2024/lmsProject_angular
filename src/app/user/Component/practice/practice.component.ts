@@ -7,4 +7,26 @@ import { Component } from '@angular/core';
 })
 export class PracticeComponent {
 
+  aptiVisible:boolean=false;
+  MCQVisible:boolean=false;
+  CodingVisible:boolean=false;
+  GTOVisible:boolean=false;
+  SQLVisible:boolean=false
+
+  ApptitudeCall(){
+    this.aptiVisible=true;
+  }
+
+  MCQCall(){
+    this.MCQVisible=true;
+  }
+  CodingCall(){
+    this.CodingVisible=true;
+  }
+  GTOCall(){
+    this.GTOVisible=true;
+  }
+  SQLCall(){
+    this.SQLVisible=true;
+  }
 }
