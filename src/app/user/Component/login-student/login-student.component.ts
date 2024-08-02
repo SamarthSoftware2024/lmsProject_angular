@@ -36,7 +36,7 @@ export class LoginStudentComponent {
             this.successMessage = '';
           } else {
             this.errorMessage = '';
-            this.successMessage = data;
+           this.successMessage = data;
           }
         },
         (error) => {

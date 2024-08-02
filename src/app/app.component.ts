@@ -13,7 +13,6 @@ export class AppComponent {
 
   login(){
     this.loginState=true;
-    alert("login called");
   }
   register(){
     this.registerState=true;
