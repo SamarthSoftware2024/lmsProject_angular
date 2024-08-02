@@ -1,15 +1,16 @@
-<div>
+<div *ngIf="!isLoggedIn">
   <div>
     <h4>Enter ID: <input type="number" [(ngModel)]="studentId"></h4>
     <h4>Enter username: <input type="text" [(ngModel)]="user.userName"></h4>
     <h4>Enter Password: <input type="text" [(ngModel)]="user.password"></h4>
     <button type="button" (click)="loginStudent()">Login Student</button>
   </div>
-  <div *ngIf="successMessage">
-    <h4> Welcome {{user.userName}}</h4>
-    <app-practice></app-practice>
-  </div>
   <div *ngIf="errorMessage">
     <p>{{ errorMessage }}</p>
   </div>
+</div>
+
+<div *ngIf="isLoggedIn">
+  <h4> Welcome {{user.userName}}</h4>
+  <app-practice></app-practice>
 </div>

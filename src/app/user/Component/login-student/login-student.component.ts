@@ -1,7 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { Component} from '@angular/core';
 import { UserComponent } from '../../user.component';
 
 @Component({
@@ -15,11 +13,11 @@ export class LoginStudentComponent {
   user: UserComponent = new UserComponent();
   successMessage: string = '';
   errorMessage: string = '';
-  dataInDB: any;
+  isLoggedIn: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  loginStudent() {
+  loginStudent = () => {
     if (this.studentId === undefined || !this.user.userName || !this.user.password) {
       this.errorMessage = 'Please fill all fields';
       this.successMessage = '';
@@ -30,19 +28,22 @@ export class LoginStudentComponent {
       .subscribe(
         (data: string) => {
           console.log(data);
-          
-          if (data === 'failed') { 
-            this.errorMessage = 'Failed to login';
+
+          if (data !== 'login successfully') {
+            this.errorMessage = data;
             this.successMessage = '';
+            this.isLoggedIn = false;
           } else {
             this.errorMessage = '';
-           this.successMessage = data;
+            this.successMessage = data;
+            this.isLoggedIn = true;
           }
         },
         (error) => {
           console.error('Error:', error);
           this.errorMessage = 'Login failed';
           this.successMessage = '';
+          this.isLoggedIn = false;
         }
       );
   }
