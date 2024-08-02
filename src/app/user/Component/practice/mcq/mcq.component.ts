@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./mcq.component.css']
 })
 export class MCQComponent {
+  attemptMCQ:boolean=false;
+
+  MCQAttempt(){
+    this.attemptMCQ=true;
+  }
 
 }

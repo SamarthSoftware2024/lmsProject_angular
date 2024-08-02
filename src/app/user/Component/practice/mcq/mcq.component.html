@@ -1,1 +1,6 @@
-<p>mcq works!</p>
+<div>
+    <button (click)="MCQAttempt()">AttemptMCQ</button>
+    <div *ngIf="attemptMCQ">
+        <app-load-mcq></app-load-mcq>
+    </div>
+</div>
