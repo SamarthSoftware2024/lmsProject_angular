@@ -8,13 +8,15 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 import { LoginStudentComponent } from './user/Component/login-student/login-student.component';
 import { RegisterStudentComponent } from './user/Component/register-student/register-student.component';
+import { PracticeComponent } from './user/Component/practice/practice.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     LoginStudentComponent,
-    RegisterStudentComponent
+    RegisterStudentComponent,
+    PracticeComponent
   ],
   imports: [
     BrowserModule,
