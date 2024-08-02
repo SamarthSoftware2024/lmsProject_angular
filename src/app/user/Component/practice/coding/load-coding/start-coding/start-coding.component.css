@@ -1,0 +1,43 @@
+/* styles.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.code-table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 800px;
+}
+
+.code-table th,
+.code-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    font-family: monospace;
+}
+
+.code-table th {
+    background-color: #f4f4f4;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap; /* Preserve whitespace formatting */
+    font-size: 14px;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}

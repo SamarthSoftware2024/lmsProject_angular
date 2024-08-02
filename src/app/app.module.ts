@@ -16,6 +16,8 @@ import { ApptitudeComponent } from './user/Component/practice/apptitude/apptitud
 import { SQLComponent } from './user/Component/practice/sql/sql.component';
 import { LoadMCQComponent } from './user/Component/practice/mcq/load-mcq/load-mcq.component';
 import { StartMCQComponent } from './user/Component/practice/mcq/load-mcq/start-mcq/start-mcq.component';
+import { LoadCodingComponent } from './user/Component/practice/coding/load-coding/load-coding.component';
+import { StartCodingComponent } from './user/Component/practice/coding/load-coding/start-coding/start-coding.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { StartMCQComponent } from './user/Component/practice/mcq/load-mcq/start-
     ApptitudeComponent,
     SQLComponent,
     LoadMCQComponent,
-    StartMCQComponent
+    StartMCQComponent,
+    LoadCodingComponent,
+    StartCodingComponent
   ],
   imports: [
     BrowserModule,

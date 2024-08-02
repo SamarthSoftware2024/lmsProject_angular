@@ -7,19 +7,9 @@ import { Component } from '@angular/core';
 })
 export class CodingComponent {
 
-  ProgramOne(){
-    alert("1 called");
-  }
-  ProgramTwo(){
-    alert("2 called");
-  }
-  ProgramThree(){
-    alert("3 called");
-  }
-  ProgramFour(){
-    alert("4 called");
-  }
-  ProgramFive(){
-    alert("5 called");
-  }
+    load:boolean=false;
+
+    loadCoding(){
+      this.load=true;
+    }
 }

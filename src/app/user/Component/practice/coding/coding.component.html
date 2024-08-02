@@ -1,42 +1,7 @@
 <div>
-    <table>
-        <table>
-            <thead>
-                <tr>
-                    <th>SN</th>
-                    <th>QName</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Adding of two numbers</td>
-                    <td><button (click)="ProgramOne()">Load</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Prime number Program</td>
-                    <td><button (click)="ProgramTwo()">Load</button></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Factorial of give number Program</td>
-                    <td><button (click)="ProgramThree()">Load</button></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Palindrome number Program</td>
-                    <td><button (click)="ProgramFour()">Load</button></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Remove dubplicate element</td>
-                    <td><button (click)="ProgramFive()">Load</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </table>
+    <button (click)="loadCoding()">Attempt Coding</button>
+
+    <div *ngIf="load">
+        <app-load-coding></app-load-coding>
+    </div>
 </div>
-
-
