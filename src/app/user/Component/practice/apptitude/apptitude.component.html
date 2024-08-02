@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="!goBack">
     <h1></h1>
     <button>1</button>
     <button>2</button>
@@ -11,8 +11,7 @@
     <button>9</button>
     <button>10</button>
     <button (click)="goBackButton()">GoBackToTestMenu</button>
-    <div *ngIf="goBack">
-        <app-practice></app-practice>
-    </div>
-  
+</div>
+<div *ngIf="goBack">
+    <app-practice></app-practice>
 </div>
