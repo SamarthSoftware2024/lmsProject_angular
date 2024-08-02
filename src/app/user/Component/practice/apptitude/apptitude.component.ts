@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ApptitudeComponent {
 
+  goBack:boolean=false;
+
+  goBackButton(){
+    this.goBack=true;
+  }
+
 }

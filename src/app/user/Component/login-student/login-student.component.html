@@ -6,7 +6,7 @@
     <button type="button" (click)="loginStudent()">Login Student</button>
   </div>
   <div *ngIf="successMessage">
-    <h1></h1>
+    <h4> Welcome {{user.userName}}</h4>
     <app-practice></app-practice>
   </div>
   <div *ngIf="errorMessage">
