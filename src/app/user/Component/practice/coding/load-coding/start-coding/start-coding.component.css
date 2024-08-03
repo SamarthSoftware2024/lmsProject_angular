@@ -24,7 +24,14 @@
 .code-table th {
     background-color: #f4f4f4;
 }
-
+.code-editor {
+    width: 100%;
+    height: 300px;
+    font-family: monospace;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+}
 pre {
     margin: 0;
     white-space: pre-wrap; /* Preserve whitespace formatting */
