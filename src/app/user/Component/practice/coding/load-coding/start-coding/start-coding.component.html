@@ -1,15 +1,16 @@
 <div class="container">
-    <div class="container">
-        <textarea id="codeEditor" class="code-editor">
-              // Your Java code here
-        </textarea>
-        <div class="button-container">
-            <button onclick="alignCode()">Align Code</button>
-            <button onclick="updateCode()">Update (Ctrl+S)</button>
-            <button onclick="compileCode()">Compile</button>
-            <button onclick="runCode()">Run</button>
-            <button onclick="submitCode()">Submit</button>
-        </div>
-        <div>{{""}}</div>
+    <textarea id="codeEditor" class="code-editor" [(ngModel)]="code">
+        // Your Java code here
+    </textarea>
+    <div class="button-container">
+        <button (click)="alignCode()">Align Code</button>
+        <button (click)="updateCode()">Update (Ctrl+S)</button>
+        <button (click)="compileCode()">Compile</button>
+        <button (click)="runCode()">Run</button>
+        <button (click)="submitCode()">Submit</button>
+    </div>
+    <div id="output">
+        <pre>{{ output }}</pre>
+        <pre style="color: red;">{{ error }}</pre>
     </div>
 </div>
