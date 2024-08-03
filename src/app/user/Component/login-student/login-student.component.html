@@ -10,7 +10,6 @@
   </div>
 </div>
 
-<div *ngIf="isLoggedIn">
-  <h4> Welcome {{user.userName}}</h4>
-  <app-practice></app-practice>
+<div *ngIf="successMessage" (click)="showDataEvent.emit(false)">
+  {{ successMessage }}
 </div>

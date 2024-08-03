@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component} from '@angular/core';
+import { Component,Output,EventEmitter} from '@angular/core';
 import { UserComponent } from '../../user.component';
 
 @Component({
@@ -16,7 +16,10 @@ export class LoginStudentComponent {
   isLoggedIn: boolean = false;
 
   constructor(private http: HttpClient) { }
-
+  @Output() showDataEvent= new EventEmitter<boolean>();
+  delay(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
   loginStudent = () => {
     if (this.studentId === undefined || !this.user.userName || !this.user.password) {
       this.errorMessage = 'Please fill all fields';
@@ -26,7 +29,7 @@ export class LoginStudentComponent {
 
     this.http.post('http://localhost:8080/login/' + this.studentId, this.user, { responseType: 'text' })
       .subscribe(
-        (data: string) => {
+        async (data: string) => {
           console.log(data);
 
           if (data !== 'login successfully') {
@@ -37,6 +40,8 @@ export class LoginStudentComponent {
             this.errorMessage = '';
             this.successMessage = data;
             this.isLoggedIn = true;
+            await this.delay(2000);
+            this.showDataEvent.emit(false);
           }
         },
         (error) => {

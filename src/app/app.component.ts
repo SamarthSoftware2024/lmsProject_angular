@@ -12,6 +12,7 @@ export class AppComponent {
 
   loginState:boolean=false;
   registerState:boolean=false;
+  showLogin:boolean=true;
 
   login(){
     this.loginState=true;
@@ -20,6 +21,11 @@ export class AppComponent {
   register(){
     this.registerState=true;
     this.loginState=false;
+  }
+  showData(data:boolean){
+    this.showLogin=data;
+    this.loginState=false;
+    this.registerState=false;
   }
 
 }
