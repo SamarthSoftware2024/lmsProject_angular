@@ -8,25 +8,23 @@ import { catchError, of } from 'rxjs';
   styleUrls: ['./start-coding.component.css']
 })
 export class StartCodingComponent {
-  code: string = ''; // Variable to store the code from the text area
+  code: string = `public class SamarthSoftware  
+{  
+    public static void main(String args[])   
+    {  
+        // Your Java code here
+    }  
+}`; // Initialize with default Java code
   output: string = ''; // Variable to store the output from the API
   error: string = ''; // Variable to store any errors from the API
 
   // JDoodle API credentials (replace with your actual credentials)
   private apiUrl = 'https://api.jdoodle.com/v1/execute';
-  private clientId = 'YOUR_CLIENT_ID'; // Replace with your JDoodle client ID
-  private clientSecret = 'YOUR_CLIENT_SECRET'; // Replace with your JDoodle client secret
+  private clientId = 'YOUR_ACTUAL_CLIENT_ID'; // Replace with your JDoodle client ID
+  private clientSecret = 'YOUR_ACTUAL_CLIENT_SECRET'; // Replace with your JDoodle client secret
 
   constructor(private http: HttpClient) {}
-  alignCode(){
-    alert("allign not implemented")
-  }
-  updateCode(){
-    alert("update not implemented")
-  }
-  submitCode(){
-    alert("submit not implemented")
-  }
+
   // Method to compile code using JDoodle API
   compileCode(): void {
     this.sendRequest('compile');
@@ -37,13 +35,12 @@ export class StartCodingComponent {
     this.sendRequest('run');
   }
 
-
   // Method to send request to JDoodle API
   private sendRequest(action: string): void {
     const payload = {
       script: this.code,
       language: 'java',
-      versionIndex: '0', // You can change this according to the JDoodle API documentation
+      versionIndex: '0', // Ensure this is correct for JDoodle API
       clientId: this.clientId,
       clientSecret: this.clientSecret
     };
@@ -79,5 +76,20 @@ export class StartCodingComponent {
         }
       }
     });
+  }
+
+  // Placeholder methods for other buttons
+  alignCode(): void {
+    // Add code formatting logic if needed
+  }
+
+  updateCode(): void {
+    // The code is already bound to the `code` property
+    // Display code or handle it as needed
+    console.log(this.code);
+  }
+
+  submitCode(): void {
+    alert('Submit functionality is not implemented.');
   }
 }
