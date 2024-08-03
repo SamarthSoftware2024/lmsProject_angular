@@ -1,0 +1,53 @@
+<div>
+    <table>
+        <table>
+            <thead>
+                <tr>
+                    <th>SN</th>
+                    <th>QName</th>
+                    <th>Action</th>
+                    <th>Start Test</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Adding of two numbers</td>
+                    <td><button (click)="ProgramOne()">Load</button></td>
+
+
+                    <td *ngIf="oneProg" (click)="startTest()">
+                        <button>Start Test</button>
+                    </td>
+                    <td *ngIf="start">
+                        <app-start-coding></app-start-coding>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Prime number Program</td>
+                    <td><button (click)="ProgramTwo()">Load</button></td>
+                    <td *ngIf="twoProg"><button>Start Test</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Factorial of give number Program</td>
+                    <td><button (click)="ProgramThree()">Load</button></td>
+                    <td *ngIf=" threeProg"><button>Start Test</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Palindrome number Program</td>
+                    <td><button (click)="ProgramFour()">Load</button></td>
+                    <td *ngIf="fourProg"><button>Start Test</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Remove dubplicate element</td>
+                    <td><button (click)="ProgramFive()">Load</button></td>
+                    <td *ngIf=" fiveProg"><button>Start Test</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </table>
+</div>

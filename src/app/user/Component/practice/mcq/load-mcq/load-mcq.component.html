@@ -1,0 +1,33 @@
+<div>
+    <table>
+
+        <thead>
+            <tr>
+                <td>SN</td>
+                <td>Test Name</td>
+                <td>StartDate</td>
+                <td>EndDate</td>
+                <td>Action</td>
+                <td *ngIf="!load">Start Test</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> 1 </td>
+                <td> Full Syllabus </td>
+                <td> 2 Aug 2024 </td>
+                <td> 5 Aug 2024 </td>
+                <td>
+                    <div> <button (click)="loadTest()">LoadTest</button></div>
+                </td>
+                <td *ngIf="!load">
+                    <div> <app-start-mcq></app-start-mcq> </div>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <!-- <div *ngIf="load">
+        <app-start-mcq></app-start-mcq>
+    </div> -->
+</div>
