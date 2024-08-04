@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component,Output,EventEmitter} from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { UserComponent } from '../../user.component';
 
 @Component({
@@ -16,32 +16,31 @@ export class LoginStudentComponent {
   isLoggedIn: boolean = false;
 
   constructor(private http: HttpClient) { }
-  @Output() showDataEvent= new EventEmitter<boolean>();
-  delay(ms: number): Promise<void> {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
+
+  @Output() showDataEvent = new EventEmitter<boolean>();
+
   loginStudent = () => {
-    if (this.studentId === undefined || !this.user.userName || !this.user.password) {
+    if (!this.user.userName || !this.user.password) {
       this.errorMessage = 'Please fill all fields';
       this.successMessage = '';
       return;
     }
 
-    this.http.post('http://localhost:8080/login/' + this.studentId, this.user, { responseType: 'text' })
+    this.http.post('http://localhost:8080/api/students/login', this.user, { responseType: 'text' })
       .subscribe(
         async (data: string) => {
           console.log(data);
 
-          if (data !== 'login successfully') {
-            this.errorMessage = data;
-            this.successMessage = '';
-            this.isLoggedIn = false;
-          } else {
+          if (data === 'login successfully') {
             this.errorMessage = '';
             this.successMessage = data;
             this.isLoggedIn = true;
-            await this.delay(2000);
+            alert("login successfully");
             this.showDataEvent.emit(false);
+          } else {
+            this.errorMessage = data;
+            this.successMessage = '';
+            this.isLoggedIn = false;
           }
         },
         (error) => {
