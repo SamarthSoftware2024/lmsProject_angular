@@ -21,13 +21,13 @@
                     <div> <button (click)="loadTest()">LoadTest</button></div>
                 </td>
                 <td *ngIf="!load">
-                    <div> <app-start-mcq></app-start-mcq> </div>
+                    <button (click)="startMCQTest()">Start</button>
                 </td>
             </tr>
         </tbody>
 
     </table>
-    <!-- <div *ngIf="load">
-        <app-start-mcq></app-start-mcq>
-    </div> -->
+    <div *ngIf="start">
+        <div> <app-start-mcq></app-start-mcq> </div>
+    </div>
 </div>

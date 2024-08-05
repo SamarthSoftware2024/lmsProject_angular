@@ -8,8 +8,13 @@ import { Component } from '@angular/core';
 export class LoadMCQComponent {
 
   load:boolean=true;
+  start:boolean=false;
 
   loadTest(){
     this.load=false;
+  }
+
+  startMCQTest(){
+    this.start=true;
   }
 }
