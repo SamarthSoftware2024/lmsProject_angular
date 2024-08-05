@@ -1,17 +1,17 @@
-<div *ngIf="!goBack">
-    <h1></h1>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button>10</button>
-    <button (click)="goBackButton()">GoBackToTestMenu</button>
-</div>
-<div *ngIf="goBack">
-    <app-practice></app-practice>
-</div>
+<div *ngIf="start">
+    <div *ngIf="currentQuestion">
+      <h2>Q: {{currentQuestionIndex + 1}} {{ currentQuestion.question }}</h2>
+      <div *ngFor="let option of currentQuestion.options">
+        <input 
+          type="radio" 
+          [value]="option" 
+          name="options" 
+          (change)="onAnswerChange(option)" 
+          [checked]="userAnswers[currentQuestionIndex] === option" /> {{ option }}
+      </div>
+      <button (click)="previousQuestion()" *ngIf="previous">Previous</button>
+      <button (click)="nextQuestion()" *ngIf="!submit">Next</button>
+      <button (click)="submitTest()" *ngIf="submit">Submit</button>
+    </div>
+  </div>
+  

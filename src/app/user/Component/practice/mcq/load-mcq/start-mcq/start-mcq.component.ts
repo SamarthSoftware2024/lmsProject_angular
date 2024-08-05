@@ -81,7 +81,7 @@ export class StartMCQComponent {
     const correctAnswersCount = this.getCorrectAnswersCount();
     if (correctAnswersCount >= 7) {
       alert("Submit success! You answered " + correctAnswersCount + " questions correctly.");
-      this.start = false; // Optionally end the test after submission
+      this.start = false;
     } else {
       alert("Not enough correct answers to submit. You need at least 7 correct answers.");
     }
