@@ -1,3 +1,17 @@
-<div>
-    <button (click)="startTest()">Start Test</button>
-</div>
+<div *ngIf="start">
+    <div *ngIf="currentQuestion">
+      <h2>Q: {{currentQuestionIndex + 1}} {{ currentQuestion.question }}</h2>
+      <div *ngFor="let option of currentQuestion.options">
+        <input 
+          type="radio" 
+          [value]="option" 
+          name="options" 
+          (change)="onAnswerChange(option)" 
+          [checked]="userAnswers[currentQuestionIndex] === option" /> {{ option }}
+      </div>
+      <button (click)="previousQuestion()" *ngIf="previous">Previous</button>
+      <button (click)="nextQuestion()" *ngIf="!submit">Next</button>
+      <button (click)="submitTest()" *ngIf="submit">Submit</button>
+    </div>
+  </div>
+  
