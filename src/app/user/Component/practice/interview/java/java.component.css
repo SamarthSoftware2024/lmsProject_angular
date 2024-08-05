@@ -1,0 +1,49 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% 75%; /* Adjust columns' width as needed */
+    gap: 10px; /* Optional: gap between columns */
+  }
+  
+  .left-side {
+    padding: 10px;
+    border-right: 1px solid #ccc;
+  }
+  
+  .left-side ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .left-side li {
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  
+  .right-side {
+    padding: 10px;
+  }
+  
+  .right-side h2 {
+    margin-top: 0;
+  }
+  
+  
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

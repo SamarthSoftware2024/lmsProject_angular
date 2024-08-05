@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./java.component.css']
 })
 export class JavaComponent {
+  selectedInfo: string | null = null;
 
+  showInfo(category: string) {
+    this.selectedInfo = category;
+  }
 }
