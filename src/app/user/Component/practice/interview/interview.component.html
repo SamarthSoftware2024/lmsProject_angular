@@ -1,0 +1,32 @@
+<div>
+    <button (click)="javaCall()">Java</button>
+    <button (click)="angularCall()">Angular</button>
+    <button (click)="reactCall()">React</button>
+    <button (click)="javaScriptCall()">JavaScript</button>
+    <button (click)="htmlCall()">HTML</button>
+    <button (click)="cssCall()">CSS</button>
+    <button (click)="mysqlCall">MySQL</button>
+</div>
+<div>
+    <div *ngIf="javaState">
+        <app-java></app-java>
+    </div>
+    <div *ngIf="angularState">
+        <app-angular></app-angular>
+    </div>
+    <div *ngIf="reactState">
+        <app-react></app-react>
+    </div>
+    <div *ngIf="javaScriptState">
+        <app-javascript></app-javascript>
+    </div>
+    <div *ngIf="htmlState">
+        <app-html></app-html>
+    </div>
+    <div *ngIf="cssState">
+        <app-css></app-css>
+    </div>
+    <div *ngIf="mysqlState">
+        <app-mysql></app-mysql>
+    </div>
+</div>

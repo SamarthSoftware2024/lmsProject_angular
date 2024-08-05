@@ -1,11 +1,11 @@
 <div>
     <div>
-        <h3>Welcome in samarth software</h3>
         <button (click)="ApptitudeCall()">Apti</button>
         <button (click)="MCQCall()">MCQ</button>
         <button (click)="CodingCall()">Coding</button>
         <button (click)="GTOCall()">GTO</button>
         <button (click)="SQLCall()">SQL</button>
+        <button (click)="InterviewCall()">InterView Question</button>
     </div>
     <div>
         <div *ngIf="aptiVisible">
@@ -22,6 +22,9 @@
         </div>
         <div *ngIf="SQLVisible">
             <app-sql></app-sql>
+        </div>
+        <div *ngIf="ineterviewVisible">
+            <app-interview></app-interview>
         </div>
     </div>
 </div>

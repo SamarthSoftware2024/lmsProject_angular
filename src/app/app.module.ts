@@ -18,6 +18,14 @@ import { LoadMCQComponent } from './user/Component/practice/mcq/load-mcq/load-mc
 import { StartMCQComponent } from './user/Component/practice/mcq/load-mcq/start-mcq/start-mcq.component';
 import { LoadCodingComponent } from './user/Component/practice/coding/load-coding/load-coding.component';
 import { StartCodingComponent } from './user/Component/practice/coding/load-coding/start-coding/start-coding.component';
+import { JavaComponent } from './user/Component/practice/interview/java/java.component';
+import { ReactComponent } from './user/Component/practice/interview/react/react.component';
+import { InterviewComponent } from './user/Component/practice/interview/interview.component';
+import { HtmlComponent } from './user/Component/practice/interview/html/html.component';
+import { CssComponent } from './user/Component/practice/interview/css/css.component';
+import { MysqlComponent } from './user/Component/practice/interview/mysql/mysql.component';
+import { JavascriptComponent } from './user/Component/practice/interview/javascript/javascript.component';
+import { AngularComponent } from './user/Component/practice/interview/angular/angular.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +42,15 @@ import { StartCodingComponent } from './user/Component/practice/coding/load-codi
     LoadMCQComponent,
     StartMCQComponent,
     LoadCodingComponent,
-    StartCodingComponent
+    JavaComponent,
+    ReactComponent,
+    StartCodingComponent,
+    InterviewComponent,
+    HtmlComponent,
+    CssComponent,
+    MysqlComponent,
+    JavascriptComponent,
+    AngularComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ export class PracticeComponent {
   CodingVisible:boolean=false;
   GTOVisible:boolean=false;
   SQLVisible:boolean=false
+  ineterviewVisible:boolean=false;
 
   ApptitudeCall(){
     this.aptiVisible=true;
@@ -20,6 +21,7 @@ export class PracticeComponent {
     this.CodingVisible=false;
     this.GTOVisible=false;
     this.SQLVisible=false;
+    this.ineterviewVisible=false;
   }
 
   MCQCall(){
@@ -28,6 +30,7 @@ export class PracticeComponent {
     this.CodingVisible=false;
     this.GTOVisible=false;
     this.SQLVisible=false;
+    this.ineterviewVisible=false;
   }
   CodingCall(){
     this.CodingVisible=true;
@@ -35,6 +38,7 @@ export class PracticeComponent {
     this.MCQVisible=false;
     this.GTOVisible=false;
     this.SQLVisible=false;
+    this.ineterviewVisible=false;
   }
   GTOCall(){
     this.GTOVisible=true;
@@ -42,9 +46,19 @@ export class PracticeComponent {
     this.MCQVisible=false;
     this.CodingVisible=false;
     this.SQLVisible=false;
+    this.ineterviewVisible=false;
   }
   SQLCall(){
     this.SQLVisible=true;
+    this.aptiVisible=false;
+    this.MCQVisible=false;
+    this.CodingVisible=false;
+    this.GTOVisible=false;
+    this.ineterviewVisible=false;
+  }
+  InterviewCall(){
+    this.ineterviewVisible=true;
+    this.SQLVisible=false;
     this.aptiVisible=false;
     this.MCQVisible=false;
     this.CodingVisible=false;
